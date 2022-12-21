@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="react/react.js"></script>
+    <script src="react/react-dom.js"></script>
+    <script src="react/babel.js"></script>
+    <script type="text/babel">
+        
+        class LifeCycleLoggerComponent extends React.Component{
+            static getName(){}
+            componentDidMount(){
+              console.log('ComponentDidMount')
+            }
+
+            componentWillUnmount(){
+                console.log('ComponentWillUnmount')
+            }
+
+            componentDidUpdate(prevProps, prevState, snapshot){
+                // console.log(
+                //     'componentDidUpdate',
+                //     prevProps,
+                //     prevState,
+                //     snapshot
+                // );
+
+                if(this.state.text.length > 12){
+                    this.setState({
+                        text: prevState.text || this.props.text
+                    })
+                }
+            }
+
+            getSnapshotBeforeUpdate(newProps, newState){
+                console.log('getSnapshotBefore', newProps, newState);
+                return true;
+            }
+
+            shouldComponentUpdate(newProps, newState){
+                console.log('shouldComponentUpdate', newProps, newState);
+                return true;
+            }
+        }
+        class TextAreaCounter extends React.Component{
+
+            constructor(){
+                super();
+                this.state = {};
+                //if bind:
+                // this.onTextChange = this.onTextChange.bind(this)
+                // onChange = {this.onTextChange}
+            }
+
+            onTextChange(event){
+                //change text via set state
+                this.setState({
+                    text: event.target.value,
+                });
+            }
+            //component lifecycle functions
+
+            
+
+            render(){
+                const text = 'text' in this.state ? this.state.text: this.props.text;
+                return (
+                    <div>
+                        <textarea 
+                        value={text}
+                        onChange = {event => this.onTextChange(event)}>
+                        </textarea>
+                        <h3>{text.length}</h3>    
+                    </div>
+                );
+            }
+        }
+
+        TextAreaCounter.defaultProps = {
+            text: 'Count my characters...'
+        }
+        ReactDOM.render(
+        //    React.createElement(MyComponent),
+        // multiple class hv to be in same location ie div
+        <TextAreaCounter text="Syahmi Radz"/>,
+           document.getElementById('app')
+        );
+    </script>
+</body>
+</html>

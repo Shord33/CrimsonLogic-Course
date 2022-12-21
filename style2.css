@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+.mostImportant {
+    background-color: aquamarine;
+    color: blueviolet;
+    padding: 20px;
+    float: left;
+    width: 33%;
+}
+
+.middleStuff{
+    background-color:cornflowerblue;
+    color:darkorchid;
+    padding: 20px;
+    float: left;
+    width: 33%;
+}
+
+.footerStuff{
+    background-color:lightgreen;
+    color:mediumturquoise;
+    padding: 20px;
+    float: left;
+    width: 34%;
+}
+
+@media screen and (max-width:1000px) {
+    .mostImportant, .middleStuff, .footerStuff {
+        width: 100%;
+    }
+}

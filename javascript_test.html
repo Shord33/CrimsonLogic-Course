@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript testing</title>
+</head>
+<body>
+    <img id="img1" src="assets\SVG\basic_book.svg" alt="book">
+    <h1 id="header1"></h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis sed pariatur nobis id commodi aliquid eum explicabo corporis ut, necessitatibus maiores maxime dolorem debitis. Numquam odit quae sunt rerum libero.</p>
+    <p>Test text</p>
+    <p>Javascript is EOMA compliant</p>
+    <p id="demo"></p>
+<script>
+    document.getElementById('header1').innerHTML='My first JS';
+    const myTag = document.getElementsByTagName('p'); //array
+    document.getElementById('demo').innerHTML='What I got is ' + myTag[1].innerHTML;
+    document.getElementById('img1').src = 'assets/SVG/basic_book_pencil.svg';
+</script>
+</body>
+</html>

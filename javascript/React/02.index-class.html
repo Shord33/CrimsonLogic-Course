@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="react/react.js"></script>
+    <script src="react/react-dom.js"></script>
+    <script src="react/babel.js"></script>
+    <script type="text/babel">
+        class MyComponent extends React.Component{
+            render(){
+                // return React.createElement('span', null, 'This is a class')
+                //access properties
+                return <span> My name is <em> {this.props.name}</em> and I am from {this.props.country}</span>
+            }
+        }
+        class ShoppingList extends React.Component{
+            render(){
+                
+                return (<span> <ul> 
+                    <li>{this.props.item}</li> 
+                    </ul></span>
+                );
+            }
+        }
+        ReactDOM.render(
+        //    React.createElement(MyComponent),
+        // multiple class hv to be in same location ie div
+        <div >
+        Shopping List
+        <ShoppingList item="Milk" />
+        <ShoppingList item="Apple" />
+        <ShoppingList item="Bread" />
+        <ShoppingList item="Sugar" />
+        <ShoppingList item="Salt" />
+        </div>,
+           document.getElementById('app')
+        );
+    </script>
+</body>
+</html>

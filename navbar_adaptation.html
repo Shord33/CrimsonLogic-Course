@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Navbar Adaptation</title>
+    <style>
+        ul {
+            background-color: skyblue;
+            padding: 0px;
+            margin: 0;
+            overflow: hidden;
+            list-style-type: none;
+        }
+        li {
+            float: right;
+        }
+        li a {
+            display: block;
+            color: blue;
+            text-align: center;
+            padding: 10px 10px;
+            text-decoration: none;
+        }
+        li a:hover:not(.active){
+            background-color: violet;
+        }
+
+        .active{
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a class="active" href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Settings</a></li>
+    </ul>
+</html>
